@@ -1,0 +1,15 @@
+import os
+import sys
+import math
+import gmsh
+
+gmsh.initialize()
+gmsh.open("bar1.stl")
+angle = 180
+gmsh.model.mesh.classify_surfaces(angle * math.pi/180, boundary=True,forReparametrization=False, curveangle=math.pi)
+
+gmsh.model.list()
+
+
+
+gmsh.logger()
